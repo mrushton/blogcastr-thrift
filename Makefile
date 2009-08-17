@@ -1,4 +1,4 @@
-EJABBERD_EBIN_DIR = /usr/lib/ejabberd/ebin/
+EJABBERD_EBIN_DIR = /usr/lib/ejabberd/ebin
 
 .PHONY = all install-rails install-ejabberd clean
 
