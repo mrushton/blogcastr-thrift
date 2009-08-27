@@ -5,9 +5,9 @@ require 'blogcastr'
 
 socket = Thrift::Socket.new("localhost", 9090)
 transport = Thrift::BufferedTransport.new(socket)
+transport.open()
 protocol = Thrift::BinaryProtocol.new(transport)
 client = Blogcastr::Client.new(protocol)
-transport.open()
-err = client.delete_node("mrushton", "/home/blogcastr.com/mrushton/test")
+subId = client.subscribe_to_pubsub_node("test", "dashboard", "/home/blogcastr.com/test/blog")
+puts subId
 transport.close()
-puts err

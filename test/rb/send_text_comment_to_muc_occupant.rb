@@ -8,10 +8,10 @@ transport = Thrift::BufferedTransport.new(socket)
 transport.open()
 protocol = Thrift::BinaryProtocol.new(transport)
 client = Blogcastr::Client.new(protocol)
-item = TextItem.new()
-item.id = 1
-item.date = Time.now.to_s 
-item.text = "This is a publish text item test"
-err = client.publish_text_item("mrushton","/home/blogcastr.com/test/blog",item)
+textComment = TextComment.new()
+textComment.id = 1
+textComment.date = Time.now.to_s 
+textComment.text = "This is a send text comment to muc occupant test"
+err = client.send_text_comment_to_muc_occupant("arta.blog@conference.blogcastr.com/dashboard", "test@blogcastr.com/blogcastr", textComment)
 puts err
 transport.close()
