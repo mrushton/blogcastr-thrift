@@ -12,6 +12,6 @@ textPost = TextPost.new()
 textPost.id = 1
 textPost.date = Time.now.to_s 
 textPost.text = "This is a publish text post test"
-err = client.publish_text_post("mrushton", "/home/blogcastr.com/mrushton/blog", textPost)
+err = client.publish_text_post_to_pubsub_node("drushton", "/home/blogcastr.com/drushton/blog", textPost)
 puts err
 transport.close()
